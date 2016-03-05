@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    resources :comics, only: [:new, :create, :edit, :update]
+
+    root 'dashboard#index'
+  end
+
   resources :comics, only: [:show]
 
   root 'portals#index'

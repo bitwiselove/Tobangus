@@ -1,0 +1,16 @@
+<%= form_for [:admin, @comic], html: { multipart: true } do |f| %>
+  <% if @comic.errors.any? %>
+    <% @comic.errors.full_messages.each do |msg| %>
+      <div><%= msg %></div>
+    <% end %>
+  <% end %>
+  <%= f.label :series %>
+  <%= f.text_field :series %>
+  <%= f.label :title %>
+  <%= f.text_field :title %>
+  <%= f.label :description %>
+  <%= f.text_area :description %>
+  <%= f.label :preview %>
+  <%= f.file_field :preview %>
+  <%= f.submit %>
+<% end %>

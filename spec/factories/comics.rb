@@ -19,9 +19,7 @@ FactoryGirl.define do
   factory :budsuckers, class: Comic do |comic|
     series "The Budsuckers"
     title "Budsuckers III"
-    description "Indica and Sativa Budsucker, two vampire children that love to
-    party, fool around in the future with sci-fi smoke, alien undead, and 
-    sedated scientists."
+    description "Indica and Sativa Budsucker, two vampire children that love to party, fool around in the future with sci-fi smoke, alien undead, and sedated scientists."
 
     preview_file_name 'test_strip.png'
     preview_content_type 'image/png'
