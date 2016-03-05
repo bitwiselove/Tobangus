@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   resources :comics, only: [:show]
+
+  root 'portals#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

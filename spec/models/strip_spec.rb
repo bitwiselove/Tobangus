@@ -11,6 +11,14 @@
 #  content_updated_at   :datetime
 #  comic_id             :integer
 #
+# Indexes
+#
+#  index_strips_on_comic_id  (comic_id)
+#
+# Foreign Keys
+#
+#  fk_rails_f912f1c14d  (comic_id => comics.id)
+#
 
 require 'rails_helper'
 
