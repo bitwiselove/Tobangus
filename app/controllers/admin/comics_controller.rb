@@ -6,7 +6,7 @@ class Admin::ComicsController < ApplicationController
   end
 
   def create
-    @comic = Comic.new(new_comic_params)
+    @comic = Comic.new(comic_params)
 
     if @comic.save
       flash[:success] = 'Comic created!'
@@ -21,9 +21,21 @@ class Admin::ComicsController < ApplicationController
     @comic = Comic.find(params[:id])
   end
 
+  def update
+    @comic = Comic.find(params[:id])
+
+    if @comic.update(comic_params)
+      flash[:success] = 'Comic updated!'
+      redirect_to edit_admin_comic_path(@comic)
+    else
+      flash.now[:error] = 'Could not update comic'
+      render action: :edit
+    end
+  end
+
   private
 
-  def new_comic_params
+  def comic_params
     params.require(:comic).permit(:title, :description, :series, :preview)
   end
 end

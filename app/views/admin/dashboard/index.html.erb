@@ -1,1 +1,6 @@
 <%= link_to 'New Comic', new_admin_comic_path %>
+<% @comics.each do |comic| %>
+  <div>
+    <%= link_to comic.title, edit_admin_comic_path(comic) %>
+  </div>
+<% end %>
